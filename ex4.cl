@@ -49,3 +49,19 @@ ArbreGot
   )
 
 (getMere (getPersonne 'Daenerys 'Targaryen ArbreGot) ArbreGot)
+
+
+(defun getAdelphie (Prenom Nom Arbre)
+  (declare (special prenom))
+  (declare (special nom))
+  (declare (special arbre))
+  (setq outputlist ())
+  (mapcar '(lambda (xx) 
+    (if (and (equal (getPere (getPersonne Prenom Nom Arbre) Arbre) (getPere xx Arbre)) (equal (getMere (getPersonne Prenom Nom Arbre) Arbre) (getMere xx Arbre)) (not (equal xx (getPersonne Prenom Nom Arbre))))
+        (setq outputlist (append outputlist (list xx))))
+             ) Arbre
+    )outputlist
+  )
+
+
+(getAdelphie 'Daenerys 'Targaryen ArbreGOT)
