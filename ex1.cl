@@ -23,7 +23,7 @@
 
 (defun reverseC (L)
   (if (= (length L) 1) L
-    (append (reverseC (rest L)) (list (first L)))
+    (append (reverseC (cdr L)) (list (car L)))
     )
   )
 
@@ -33,8 +33,8 @@
 
 (defun double (L)
   (if (null L) ()
-      (if (atom (first L)) (append (list (first L)) (list (first L)) (double (rest L)))
-        (append (list (first L)) (double (rest L)))
+      (if (atom (car L)) (append (list (car L)) (list (car L)) (double (cdr L)))
+        (append (list (car L)) (double (cdr L)))
         )
     )
   )
