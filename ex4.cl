@@ -1,5 +1,5 @@
 ; Code de l'exercice 4 du TP1 - IA01 A21
-; Martin Schneider - Océane Bordeau 
+; Martin Schneider - OcÃ©ane Bordeau 
 
 (setq ArbreGot '(((NOM Targaryen) (PRENOM AerysII) (PERE) (MERE))
                  ((NOM Targaryen) (PRENOM Rhaella) (PERE) (MERE))
@@ -38,14 +38,14 @@ ArbreGot
 
 
 (defun getPere (personne arbre)
-  (getPersonne (car (cdr (car (cdr (car (cdr (car (cdr (cdr personne))))))))) (car (cdr (car (car (cdr (car (cdr (cdr personne)))))))) arbre)
+  (getPersonne (cadr (cadadr (nth 2 personne))) (car(cdaadr(nth 2 personne))) arbre)
   )
 
 (getPere (getPersonne 'Daenerys 'Targaryen ArbreGot) ArbreGot)
 
 
 (defun getMere (personne arbre)
-  (getPersonne (car (cdr (car (cdr (car (cdr (car (cdr (cdr (cdr personne)))))))))) (car (cdr (car (car (cdr (car (cdr (cdr (cdr personne))))))))) arbre)
+  (getPersonne (cadr (cadadr (nth 3 personne))) (car(cdaadr(nth 3 personne))) arbre)
   )
 
 (getMere (getPersonne 'Daenerys 'Targaryen ArbreGot) ArbreGot)
