@@ -56,18 +56,11 @@
 
 
 ; Fonction palindrome
-(defun reverse (L)
-  (if (= (length L) 1) L
-    (append (reverse (cdr L)) (list (car L)))
-    )
-  )
-
-
 (defun palindrome (L)
   (if (EQUAL L (reverse L)) T NIL)
   )
 
-(palindrome  '(x a n a x) )
+(palindrome  '(x a n a x))
 
 
 ; Fonction grouper
