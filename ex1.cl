@@ -57,7 +57,7 @@
 
 (defun reverseC (L)
   (if (= (length L) 1) L
-    (append (reverseC (rest L)) (list (first L)))
+    (append (reverseC (rest L)) (list (car L)))
     )
   )
 
@@ -72,7 +72,7 @@
 
 (defun grouper (L1 L2)
   (if (= (length L1) 1) (list (list (car L1) (car L2)))
-      (cons (list (car L1) (car L2)) (grouper (rest L1) (cdr L2)))
+      (cons (list (car L1) (car L2)) (grouper (cdr L1) (cdr L2)))
     )
   )
 
